@@ -1,13 +1,41 @@
 .card{
     box-shadow: 5px 5px 5px 5px #C0C0C0;
     padding:20px;
+    margin:10px;
+    background-color: #FDEDEC;
 }
 .container{
     width:30%;
     padding:30px
 }
-.list-container{
+
+#nav-list{
+    margin:0;
+    background-color:#AD2831;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+.list-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#header h3{
+    font-size:30px;
+}
+#header h1,h3{
+    margin:0;
+}
+button{
+    width:200px;
+    height: 50px;
+    color:white;
+    font-size:18px;
+    background-color: #AD2831;
+    border: 2px #AD2831 solid;
+}
+.card h2, .card h1{
+    color:#250902;
 }

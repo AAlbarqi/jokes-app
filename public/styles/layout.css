@@ -16,19 +16,6 @@ footer{
     color:white;
     height:100px;
 }
-#header h3{
-    font-size:30px;
-}
-#header h1,h3{
-    margin:0;
-}
-#nav-list{
-margin:0;
-background-color:#AD2831;
-display:flex;
-flex-direction: row;
-justify-content: space-evenly;
-}
 
 ul{
 list-style-type: none;
