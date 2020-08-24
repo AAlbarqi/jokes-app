@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../layout/head') %>
+</head>
+<body>
+    <%- include('../layout/header') %>
+    <ul id="test">
+        <% jokes.forEach(joke => { %>
+            <li id="main">
+                <h1> * <%= joke.id %></h1>
+                <h2>Type: <%= joke.type %></h2>
+                <h2>Setup: <%= joke.setup %></h2>
+                <h2>Punchline: <%= joke.punchline %></h2>
+                <form action="/favorite" method="POST">
+                    <input type="hidden" name="id" value="<%= joke.id %>">
+                    <input type="hidden" name="type" value="<%= joke.type %>">
+                    <input type="hidden" name="setup" value="<%= joke.setup %>">
+                    <input type="hidden" name="punchline" value="<%= joke.punchline %>">
+                    <button>Add to my list</button>
+                </form>
+            </li>
+
+        <%})%>
+    </ul>
+    <%- include('../layout/footer') %>
+</body>
+</html>
