@@ -1,0 +1,13 @@
+.card{
+    box-shadow: 5px 5px 5px 5px #C0C0C0;
+    padding:20px;
+}
+.container{
+    width:30%;
+    padding:30px
+}
+.list-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

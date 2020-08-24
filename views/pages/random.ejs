@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../layout/head') %>
+</head>
+<body>
+    <%- include('../layout/header') %>
+    <section class="card">
+        <h2>Joke NO. : <%= joke.id %></h2>
+        <h2>Type: <%= joke.type %></h2>
+        <h2>Setup: <%= joke.setup %></h2>
+        <h2>Punchline: <%= joke.punchline %></h2>
+    </section>
+    <%- include('../layout/footer') %>
+</body>
+</html>

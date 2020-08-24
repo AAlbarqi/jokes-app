@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../layout/head') %>
 </head>
+
 <body>
     <%- include('../layout/header') %>
-    <ul id="test">
+    <ul>
         <% jokes.forEach(joke => { %>
-            <li id="main">
+        <li class="container">
+            <section class="card">
                 <h1> * <%= joke.id %></h1>
                 <h2>Type: <%= joke.type %></h2>
                 <h2>Setup: <%= joke.setup %></h2>
@@ -19,10 +22,12 @@
                     <input type="hidden" name="punchline" value="<%= joke.punchline %>">
                     <button>Add to my list</button>
                 </form>
-            </li>
+            </section>
+        </li>
 
         <%})%>
     </ul>
     <%- include('../layout/footer') %>
 </body>
+
 </html>

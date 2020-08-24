@@ -13,7 +13,7 @@ const client = new pg.Client(process.env.DATABASE_URL);
 app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(override('_method'));
 client.connect();
 
@@ -23,6 +23,7 @@ app.post('/favorite', saveJokes);
 app.get('/favorite/:id', jokeDetails);
 app.put('/favorite/:id', updateJoke);
 app.delete('/favorite/:id', deleteJoke);
+app.get('/random', randomJoke);
 
 
 function searchJokes(req,res){
@@ -66,6 +67,11 @@ function deleteJoke(req,res){
     let values = [jokeId];
     return client.query(SQL,values).then( ()=>{
         res.redirect(`/favorite`);
+    })
+}
+function randomJoke (req,res){
+    superagent.get('https://official-joke-api.appspot.com/jokes/programming/random').then(data =>{
+        res.render('pages/random', {joke:data.body[0]});
     })
 }
 app.listen(PORT, () => {console.log(`Listening on PORT ${PORT}`)})
