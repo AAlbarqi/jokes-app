@@ -11,9 +11,10 @@ const PORT = process.env.PORT || 3000;
 const client = new pg.Client(process.env.DATABASE_URL);
 
 app.use(cors());
-app.set('view engine', 'ejs');
-app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
+    // ('./public'));
+app.set('view engine', 'ejs');
 app.use(override('_method'));
 client.connect();
 
